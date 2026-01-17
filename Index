@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lettre à Graciella</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+    min-height:100vh;
+    font-family:'Playfair Display', serif;
+    background:
+    linear-gradient(rgba(5,5,10,.88),rgba(5,5,10,.98)),
+    url("images/g1 (2).jpeg") center/cover no-repeat fixed;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+    overflow-x:hidden;
+}
+
+main{
+    width:100%;
+    max-width:850px;
+    display:flex;
+    flex-direction:column;
+    gap:60px;
+}
+
+.container{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:28px;
+    padding:38px 32px;
+    box-shadow:0 0 45px rgba(255,105,180,.25);
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.container.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:3em;
+    text-align:center;
+    color:#ffb6c1;
+    margin-bottom:20px;
+    overflow:hidden;
+    white-space:nowrap;
+    border-right:2px solid #ffb6c1;
+}
+
+p{
+    font-size:1.05em;
+    line-height:2;
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.image-box{
+    max-width:340px;
+    margin:32px auto;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,.8);
+}
+
+.image-box img{
+    width:100%;
+    display:block;
+}
+
+.btn{
+    display:block;
+    margin:40px auto 0;
+    padding:16px 34px;
+    border:none;
+    border-radius:50px;
+    font-size:1.1em;
+    background:linear-gradient(135deg,#f31b66,#cac6c6);
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 15px 30px rgba(255,105,180,.6);
+}
+
+.response{
+    display:none;
+    margin-top:28px;
+    text-align:center;
+    font-family:'Great Vibes', cursive;
+    font-size:1.5em;
+    color:#ffb6c1;
+}
+
+/* 💫 CŒURS */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:18px;
+    color:rgba(255,182,193,.85);
+    animation:floatHeart 4s linear forwards;
+    pointer-events:none;
+    z-index:999;
+}
+
+@keyframes floatHeart{
+    from{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh) scale(1.8);
+        opacity:0;
+    }
+}
+
+/* Mobile romantique */
+@media(max-width:768px){
+    h1{font-size:2.4em}
+    p{font-size:1em}
+    body{background-attachment:scroll}
+    .container{padding:42px 24px}
+}
+
+@media(max-width:380px){
+    h1{font-size:2.1em}
+    p{font-size:.95em}
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(1px 1px at 20% 30%,#fff,transparent),
+        radial-gradient(1px 1px at 80% 70%,#fff,transparent),
+        radial-gradient(1px 1px at 40% 80%,#fff,transparent),
+        radial-gradient(1px 1px at 70% 20%,#fff,transparent);
+    opacity:.18;
+    animation:stars 90s linear infinite;
+    pointer-events:none;
+}
+.music-btn{
+        width:46px;
+        height:46px;
+        bottom:14px;
+        right:14px;
+    }
+
+    .music-btn{
+    position:fixed;
+    bottom:18px;
+    right:18px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:rgba(0,0,0,.6);
+    backdrop-filter:blur(10px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold);
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,.7);
+    transition:.3s;
+    z-index:10;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+<!-- 🎵 MUSIQUE -->
+<audio id="music" loop muted>
+    <source src="music/DADJU_-_Danger_avec_WIZKID_.mp3" type="audio/mp3">
+</audio>
+
+<div class="music-btn" id="musicBtn">⏸</div>
+
+
+<main>
+
+<div class="container">
+    <h1 data-text="Graciella"></h1>
+
+    <div class="image-box">
+        <img src="images/g1 (1).jpeg" alt="Graciella">
+    </div>
+
+    <p>
+        Il y a des présences qui traversent le temps sans se perdre, Elles changent de forme, jamais de valeur.<br>
+
+        Si j’écris ces mots, ce n’est pas pour raviver une douleur ni pour forcer quoi que ce soit.
+        C’est parce que certaines personnes marquent une vie à jamais, et que toi, tu fais partie de celles-là.
+        Tu as laissé une trace que le temps n’efface pas.<br>
+
+        Je ne sais pas où tu en es aujourd’hui, ni si ces mots résonneront encore en toi.
+        Mais je voulais que tu saches que ce que nous avons partagé était réel, précieux,
+        et que je regrette sincèrement de ne pas l’avoir protégé comme il le fallait.
+    </p>
+</div>
+
+<div class="container">
+    <h1 data-text="Le Temps"></h1>
+
+    <p>
+        Parce que ce qu’on a vécu n’était pas ordinaire.
+        Parce que toi, tu n’étais pas ordinaire.<br>
+        On a traversé des montagnes et des vagues.
+        On est tombés, on s’est relevés, parfois séparément, parfois ensemble.
+        Et dans ce chaos que je créais souvent moi-même, toi, tu es restée.<br>
+        Tu as été là quand je doutais, quand je fuyais, quand je revenais sans savoir aimer correctement.
+        Tu as été là même quand je ne le méritais pas.<br>
+    </p>
+</div>
+
+<div class="container">
+    <h1 data-text="La Chanson et les photos"></h1>
+
+    <p>
+        Si tu clique sur le bouton de la musique qui est là, il y a une chanson qui va jouer là <br>
+        cette chanson me rappelle la seule fois que tu as passé la nuit chez nous, tout ce qu'on <br> s'était dit ce jour là, je ne l'ai jamais oublié. <br>
+        j'ai fait tout ça pour que tu comprennes que tu n'as jamais été une simple personne <br> pour moi 
+        je t'ai toujours considéré comme depuis le premier jour qu'on s'est parlé,<br> c'était en dehors ici  de la parcelle et  j'ai gardé toutes ses photos juste pour te montrer<br> que tu répresentes beaucoup pour moi
+    </p>
+</div>
+
+
+
+
+
+
+<div class="container">
+    <h1 data-text="Graciella"></h1>
+
+    <p>
+        Aujourd’hui, je veux surtout te dire pardon. Pardon pour mes erreurs, pour mes silences,
+        pour les moments <br>où je n’ai pas été à la hauteur de ce que tu méritais.Tu comptes, tu comptes encore,
+        et ce qu’on a vécu n’a jamais été banal pour moi.
+        Je veux qu'on reprenne tout à zéro, je veux te revoir dès que tu seras guéris, accorde moi cette chance, je te promet de 
+        ne plus être cette même personne que tu connaissait avant, cette fois c'est la dernière.
+    </p>
+
+    <button class="btn" onclick="showResponse()">Clique ici 💖</button>
+
+    <div class="response" id="response">
+        Peu importe ta réponse,<br>
+        sache que ces mots sont vrais et sincères…<br>
+        — Daniel Nkum's
+    </div>
+</div>
+
+</main>
+
+<script>
+/* 🎵 Activer le son */
+const music=document.getElementById("music");
+document.addEventListener("click",()=>{
+    music.muted=false;
+    music.play();
+},{once:true});
+
+/* ✨ Animation écriture */
+document.querySelectorAll("h1").forEach(title=>{
+    const text=title.dataset.text;
+    let i=0;
+    const interval=setInterval(()=>{
+        title.textContent+=text[i];
+        i++;
+        if(i===text.length){
+            clearInterval(interval);
+            title.style.border="none";
+        }
+    },120);
+});
+
+/* 💗 Apparition scroll */
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{threshold:0.2});
+
+document.querySelectorAll(".container").forEach(el=>observer.observe(el));
+
+/* 💫 CŒURS AU SCROLL */
+let lastScroll=0;
+window.addEventListener("scroll",()=>{
+    const now=Date.now();
+    if(now-lastScroll>200){
+        createHeart();
+        lastScroll=now;
+    }
+});
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💗";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(14+Math.random()*18)+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),4000);
+}
+
+function showResponse(){
+    document.getElementById("response").style.display="block";
+}
+
+
+</script>
+
+</body>
+</html>
